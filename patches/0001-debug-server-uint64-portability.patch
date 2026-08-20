@@ -1,0 +1,11 @@
+--- a/runtime/src/debug_server.c
++++ b/runtime/src/debug_server.c
+@@ -10582,7 +10582,7 @@
+     (void)json;
+     int selftest = overlay_sljit_selftest();
+     int available = 0, st_ok = 0;
+-    unsigned long long compiles = 0, declines = 0, bytes = 0;
++    uint64_t compiles = 0, declines = 0, bytes = 0;
+     overlay_sljit_get_status(&available, &st_ok, &compiles, &declines, &bytes);
+     send_fmt("{\"id\":%d,\"ok\":true,\"backend\":\"%s\",\"available\":%d,"
+              "\"selftest_ok\":%d,\"live\":%d,\"compiles\":%llu,\"declines\":%llu,"

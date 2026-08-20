@@ -1,0 +1,47 @@
+name: Source sanity
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  source-sanity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Python syntax
+        run: python -m py_compile scripts/inspect-inputs.py
+
+      - name: Check shell syntax
+        run: |
+          bash -n scripts/build-windows.sh
+          bash -n scripts/test-apv2-controller.sh
+          bash -n scripts/test-spu-sweep.sh
+
+      - name: Run source regressions
+        run: |
+          bash scripts/test-apv2-controller.sh
+          bash scripts/test-spu-sweep.sh
+
+      - name: Check seed metadata
+        shell: bash
+        run: |
+          seed_hash="$(sha256sum seeds/functions.txt | awk '{print $1}')"
+          grep -q "$seed_hash" generated/GAME_CODEGEN_INPUT_SHA256.txt
+
+      - name: Ensure proprietary runtime inputs are not committed
+        shell: bash
+        run: |
+          set -euo pipefail
+          bad="$(find . -type f \( \
+            -iname 'SCPH1001.BIN' -o \
+            -iname 'SLUS_014.11' -o \
+            -iname 'Yu-Gi-Oh! Forbidden Memories (USA).bin' -o \
+            -iname 'Yu-Gi-Oh! Forbidden Memories (USA).cue' \
+          \) -print)"
+          if [[ -n "$bad" ]]; then
+            echo "Proprietary runtime input(s) must not be committed:"
+            echo "$bad"
+            exit 1
+          fi

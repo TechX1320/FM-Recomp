@@ -1,0 +1,40 @@
+# Build output
+/build-*/
+/dist-windows/
+/cache/
+/input-reports/
+
+# User-supplied copyrighted inputs and local copies
+/bios/*
+!/bios/.gitkeep
+/input/*
+!/input/.gitkeep
+/disc/*
+!/disc/.gitkeep
+/user-files/*
+!/user-files/README.txt
+
+# Generated BIOS/game source
+/psxrecomp/bios/
+/psxrecomp/generated/*
+!/psxrecomp/generated/.gitkeep
+/generated/*
+!/generated/.gitkeep
+!/generated/GAME_CODEGEN_INPUT_SHA256.txt
+
+# Runtime/local state
+/saves/
+/overlay_captures.json
+/psx_*.json
+/psx_*.txt
+
+# Compiled binaries
+*.dll
+*.exe
+*.pdb
+
+# Editor / OS clutter
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

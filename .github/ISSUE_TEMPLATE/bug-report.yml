@@ -1,0 +1,54 @@
+name: Bug report
+description: Report a reproducible build or runtime problem
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not upload a PlayStation BIOS, game BIN/CUE, SLUS_014.11, or copyrighted game assets.
+  - type: input
+    id: version
+    attributes:
+      label: Project version
+      placeholder: "0.1.11"
+    validations:
+      required: true
+  - type: input
+    id: launcher
+    attributes:
+      label: Launcher used
+      placeholder: "RUN_FM_APV2_BYPASS.cmd"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the last visible screen/action and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Build...
+        2. Launch...
+        3. Select...
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostic summary
+      description: Paste relevant text from psx reports or attach non-copyrighted JSON/log reports. Do not attach BIOS/game files.
+  - type: checkboxes
+    id: inputs
+    attributes:
+      label: Input verification
+      options:
+        - label: The build input verifier reported PASS for my BIOS and disc.
+          required: true
+        - label: I have not attached copyrighted BIOS/game files to this issue.
+          required: true

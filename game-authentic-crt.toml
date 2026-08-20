@@ -1,0 +1,45 @@
+[game]
+name = "Yu-Gi-Oh! Forbidden Memories"
+id = "SLUS-01411"
+exe = "input/SLUS_014.11"
+disc = "disc/Yu-Gi-Oh! Forbidden Memories (USA).cue"
+load_address = "0x80010000"
+entry_pc = "0x800129D8"
+text_size = "0x1D0000"
+stack_base = "0x801FFFF0"
+
+[recompiler]
+seeds = "seeds/functions.txt"
+strict = true
+out_dir = "generated"
+
+[runtime]
+debug_port = 4511
+window_title = "Yu-Gi-Oh! Forbidden Memories Recompiled - Authentic CRT"
+bios_hle = false
+bios_hle_keep_intro = true
+fast_boot = false
+hle_scheduler = true
+overlay_cache = true
+overlay_backend = "auto"
+disc_speed = "1x"
+memcard_dir = "saves"
+turbo_loads = false
+
+[video]
+renderer = "opengl"
+supersampling = 1
+antialiasing = true
+texture_filtering = "nearest"
+crt_filter = "trinitron"
+vsync = "on"
+aspect_ratio = "4:3"
+frame_interpolation = false
+
+[audio]
+spu_hq = false
+
+[controller]
+default_mode = "digital"
+allow_hybrid = true
+lock_mode = false

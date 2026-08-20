@@ -1,0 +1,16 @@
+SLUS_014.11 SHA-256:
+84a54ed74f3d0edd6d81380839f7e4ef5bfb21ecea18be9a062bd6bfa5a45c88
+
+Forbidden Memories seed-list SHA-256:
+3326d70bf45268c32324a703ce70da36acdde8dc8bf6f7403a122a59b5db874d
+
+Runtime-proven game entries:
+0x80049000 (return continuation after JAL at 0x80048FF8)
+0x80012CD4 (interrupt callback)
+0x8005C1F4 (intro MDEC-out DMA callback)
+0x80033DB0 (first 3D scene handler veneer)
+
+Generated files created locally during build:
+SLUS_014.11_full.c
+SLUS_014.11_dispatch.c
+SLUS_014.11_full.ranges

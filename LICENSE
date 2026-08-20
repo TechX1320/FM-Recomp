@@ -1,0 +1,36 @@
+Repository Licensing Notice
+===========================
+
+This repository is a combined source tree. It does not apply one blanket
+relicense to every file.
+
+1. PSXRecomp framework
+----------------------
+The code under `psxrecomp/` is provided under the PolyForm Noncommercial
+License 1.0.0. The complete license text is in:
+
+    psxrecomp/LICENSE
+
+That license restricts commercial use. Preserve its copyright and license
+notices when redistributing or modifying covered code.
+
+2. Third-party components
+-------------------------
+Vendored third-party components retain their respective upstream licenses.
+See `THIRD_PARTY_NOTICES.md` and the license files stored beside those
+components.
+
+3. Yu-Gi-Oh! Forbidden Memories and PlayStation material
+--------------------------------------------------------
+No PlayStation BIOS, Yu-Gi-Oh! Forbidden Memories disc image, extracted game
+executable, or copyrighted game assets are licensed or distributed by this
+repository. Users must provide their own legally obtained dumps.
+
+Yu-Gi-Oh! Forbidden Memories is © Konami. PlayStation and PlayStation firmware
+are property of Sony Interactive Entertainment. This project is independent
+and is not affiliated with or endorsed by Konami or Sony.
+
+4. No implied relicensing
+-------------------------
+Files carrying their own copyright or license notices remain governed by those
+notices. This repository-level notice does not replace or broaden those terms.
