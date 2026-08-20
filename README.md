@@ -141,23 +141,6 @@ Generated game code and BIOS-derived generated code are intentionally not distri
 
 For this game repository you can clone normally; the current build uses the bundled PSXRecomp snapshot and has the optional PSXRecomp launcher disabled, so its RmlUi/FreeType launcher submodules are not required for the standard Forbidden Memories build.
 
-## Publishing this source to GitHub
-
-The ZIP is arranged so a normal `git add .` does not stage your BIOS, game disc, generated code, build output, saves, or runtime reports. No Git LFS setup is required for the included source tree.
-
-Typical first push:
-
-```bash
-git init
-git add .
-git commit -m "Initial public source release"
-git branch -M main
-git remote add origin <your-github-repository-url>
-git push -u origin main
-```
-
-Before every release, confirm that `user-files/`, `bios/`, `disc/`, `input/`, `dist-windows/`, and local generated output are not being uploaded. The included GitHub Actions sanity check also rejects the exact BIOS/game runtime input filenames if they are ever committed.
-
 ## Current development status
 
 The project remains a bring-up/recompilation project rather than a completed commercial-quality port.
